@@ -1,0 +1,111 @@
+/* Header for the form (e.g., h3) */
+h3, h3.panjang, h3.pendek {
+    font-family: alice;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #00ffd0;
+    padding: 12px 22px;
+    border-radius: 15px 15px 0px 0px;
+    margin: 30px auto 0px;
+    width: 450px;
+    background-color: #1e1e1e;
+    box-shadow: 15px 15px 6px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Form container */
+form, form.panjang, form.pendek {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #2a2a2a;
+    border-radius: 0px 0px 15px 15px;
+    margin: 0px auto;
+    width: 450px;
+    background-color: #1a1a1a;
+    box-shadow: 15px 15px 6px 0px rgba(0, 0, 0, 0.6);
+    color: #e0e0e0;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="password"],
+input[type="file"],
+select {
+    width: 230px;
+    padding: 8px 15px;
+    margin: 8px 0;
+    border-radius: 20px;
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: #00ffd0;
+    background-color: #333;
+}
+
+/* Placeholder text */
+::placeholder {
+    color: #aaa;
+}
+
+/* File upload button (unchanged but fits) */
+input[type="file"] {
+    padding: 3px;
+}
+
+/* Labels in form */
+td:nth-child(1) {
+    font-family: alice;
+    font-size: 14px;
+    color: #e0e0e0;
+    text-align: left;
+    width: 200px;
+}
+
+/* File upload label (custom style) */
+.custom-file-upload {
+    display: inline-block;
+    padding: 2px 25px;
+    border: 2px solid #00ffd0;
+    border-radius: 15px;
+    background-color: #1e1e1e;
+    color: #00ffd0;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.custom-file-upload:hover {
+    background-color: #00ffd0;
+    color: #121212;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 255, 208, 0.3);
+}
+
+/* Success or info message box */
+h4 {
+    font-family: alice;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    width: 380px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #00ffd0;
+    margin: 20px auto 0px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 15px 15px 6px 0px rgba(0, 0, 0, 0.5);
+}
+
+.white-span {
+    color: white;
+    font-weight: normal;
+    font-size: 16px;
+}

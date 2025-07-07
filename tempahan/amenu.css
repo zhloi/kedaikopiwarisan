@@ -1,0 +1,323 @@
+body {
+    background-image: url(imej/background2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+body::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
+img.logo {
+    width: 200px; /* Increased logo size */
+    margin-top: 5px;  /* Increased margin to move it down */
+    margin-right: 20px;
+}
+
+header {
+    height: 200px; /* keep your current header height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    
+    background-image: url(imej/header2.jpeg);
+    background-size: cover;
+    background-attachment: fixed; /* optional */
+    background-position: center;
+    
+    transition: opacity 0.3s ease;
+}
+
+nav {
+    top: 140px;
+    width: 100%;
+    height: 100px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main.menu {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1320px; /* Add a max-width to control the overall container width */
+    margin: 0 auto; /* Center the container */
+}
+
+figure {
+    flex: 0 0 calc(33.33% - 20px);
+    min-width: 300px;
+    margin: 20px 0 0 0;
+    overflow: visible;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Image styling */
+img.home {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* On hover: slide image left and popup right simultaneously */
+figure:hover img.home {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.9);
+    transform: scale(1.02);
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+
+ul li {
+    display: block;
+    float: left;
+    position: relative; /* Ensure the dropdown is positioned relative to the list item */
+}
+
+li ul {
+    max-height: 0; /* Start with max-height of 0 for animation */
+    overflow: hidden; /* Hide overflow */
+    position: absolute; /* Position it absolutely */
+    top: 100%; /* Position it below the parent item */
+    left: 0; /* Align to the left */
+    opacity: 0; /* Start with opacity 0 for fade effect */
+    transform: translateY(-10px); /* Start slightly above */
+    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease; /* Transition for max-height, opacity, and position */
+    z-index: 1; /* Ensure it appears above other elements */
+}
+
+ul li:hover ul {
+    max-height: 300px; /* Set a max-height for the dropdown when visible */
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move to original position */
+}
+
+ul li a {
+    font-family: alice;
+    font-size: 16px; /* Increased font size */
+    font-weight: normal;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    width: 150px; /* Increased width */
+    padding: 12px 15px; /* Increased padding for larger button */
+    border: 3px solid black;
+    border-radius: 15px;
+    background-color: #141414;
+    margin: 4px 15px 4px 0px;
+    display: block;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for background color, tilt, and shadow */
+    position: relative; /* For pseudo-element positioning */
+    overflow: hidden; /* To contain the pseudo-element */
+}
+
+ul li a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2); /* Light overlay */
+    border-radius: 50%;
+    transition: transform 0.5s ease; /* Smooth transition for the overlay */
+    z-index: 0; /* Behind the text */
+    transform: translate(-50%, -50%) scale(0); /* Start scaled down */
+}
+
+ul li a:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Scale up on hover */
+}
+
+ul li a:hover {
+    color: black;
+    background-color: silver;
+    transform: rotate(-5deg) translateY(-5px); /* Tilt and lift effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+ul li a:active {
+    transform: translateY(2px); /* Press effect */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Reduce shadow on press */
+}
+
+li:hover li {
+    float: none;
+}
+
+.welcome-message {
+    color: white; /* Change the text color to white */
+    font-size: 16px; /* Adjust the font size as needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: add a semi-transparent background */
+    padding: 5px; /* Optional: add some padding */
+    border-radius: 5px; /* Optional: round the corners */
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 999; 
+  padding-top: 100px; 
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4);
+
+}
+.modal-content {
+  background-color: #141414;
+  color: white;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.close {
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover,
+.close:focus {
+  color: white;
+}
+
+table.laporan2 {
+    width: 750px;
+}
+
+#foodicon2 {
+    margin-right: 10px; /* Adjust the value as needed */
+    vertical-align: middle; /* Optional: align with the text */
+}
+
+#foodicon1 {
+    margin-right: 10px; /* Adjust the value as needed */
+    vertical-align: middle; /* Optional: align with the text */
+}
+
+/* Style for table.laporan2 matching aborang & asenarai */
+
+table.laporan2 {
+    width: 750px;
+    margin: 30px auto;
+    border-collapse: separate; /* Needed for border-radius */
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #1e1e1e;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0e0e0;
+    font-size: 16px;
+}
+
+table.laporan2 caption {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00ffd0;
+    padding: 15px 0;
+    text-align: center;
+}
+
+table.laporan2 th, table.laporan2 td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #333;
+    text-align: left;
+}
+
+table.laporan2 th {
+    background-color: #2c2c2c;
+    color: #00ffd0;
+    text-transform: uppercase;
+    border-bottom: 2px solid #444;
+}
+
+table.laporan2 tr:nth-child(even) {
+    background-color: #252525;
+}
+
+table.laporan2 tr:nth-child(odd) {
+    background-color: #1e1e1e;
+}
+
+table.laporan2 tr:hover {
+    background-color: #333;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Rounded corners on first and last cells of first and last rows */
+table.laporan2 tr:first-child th:first-child {
+    border-top-left-radius: 12px;
+}
+table.laporan2 tr:first-child th:last-child {
+    border-top-right-radius: 12px;
+}
+table.laporan2 tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+table.laporan2 tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+/* Images inside the table */
+table.laporan2 td img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    transition: transform 0.3s ease;
+}
+
+table.laporan2 td img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.9);
+}
+
+/* Action links/buttons */
+table.laporan2 a {
+    display: inline-block;
+    background-color: #00ffd0;
+    color: #121212;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+table.laporan2 a:hover {
+    background-color: #00c2a6;
+}
+
+input.styled-input[type="number"] {
+    width: 75px;
+    padding: 8px 15px;
+    margin: 8px 0;
+    border-radius: 20px;
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
